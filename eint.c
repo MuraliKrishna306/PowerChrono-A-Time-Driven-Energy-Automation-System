@@ -35,7 +35,7 @@ void Init_Interrupt(void)
 	 CfgPortPinFunc(0,1,PIN_FUNC4);
 //	 CfgPortPinFunc(0,EINT1_VIC_CHNO,PIN_FUNC4);
 	 VICIntSelect =0;
-	 VICIntEnable  = 1 << EINT0_VIC_CHNO;//|(1 << EINT1_VIC_CHNO);
+	 VICIntEnable  = 1 << EINT0_VIC_CHNO | (1 << EINT1_VIC_CHNO);
 	 VICVectCntl0=(1<<5)|EINT0_VIC_CHNO;
 	 VICVectAddr0  = (u32)eint0_isr;
 	  EXTMODE |=1<<0;
